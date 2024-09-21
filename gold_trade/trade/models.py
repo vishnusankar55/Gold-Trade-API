@@ -19,11 +19,11 @@ class Transaction(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 class CustomUser(AbstractUser):
-    # Add any additional fields here if needed
+    
     pass
 
 class Transaction(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    transaction_type = models.CharField(max_length=10)  # e.g., 'buy' or 'sell'
+    transaction_type = models.CharField(max_length=10)  
     gold_grams = models.DecimalField(max_digits=10, decimal_places=2)
     timestamp = models.DateTimeField(auto_now_add=True)
