@@ -9,5 +9,5 @@ def get_gold_price():
     if gold_price is None:
         response = requests.get('https://api.metalpriceapi.com/v1/latest?access_key=YOUR_API_KEY')
         gold_price = response.json().get('rates', {}).get('XAU')
-        redis_instance.set('gold_price', gold_price, ex=300)  # Cache for 5 minutes
+        redis_instance.set('gold_price', gold_price, ex=300)  
     return float(gold_price)

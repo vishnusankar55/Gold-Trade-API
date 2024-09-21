@@ -11,11 +11,11 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = User(**validated_data)
-        user.set_password(validated_data['password'])  # Hash the password
+        user.set_password(validated_data['password'])  
         user.save()
         return user
 
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
-        fields = '__all__'  # Specify fields as needed
+        fields = '__all__'  

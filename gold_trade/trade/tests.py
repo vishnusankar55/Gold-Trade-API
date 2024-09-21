@@ -13,7 +13,7 @@ class UserRegistrationTest(APITestCase):
 
     def test_register_user_invalid_data(self):
         response = self.client.post(reverse('register'), {
-            'username': '',  # Invalid username
+            'username': '',  
             'password': 'testpass',
             'email': 'test@example.com'
         })
